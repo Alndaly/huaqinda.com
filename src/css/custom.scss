@@ -1,0 +1,160 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+
+/* You can override the default Infima variables here. */
+:root {
+	// 字体设置
+	// --ifm-font-family-base: LXGWWenKaiGBScreen;
+	--ifm-font-size-base: 17px;
+	--ifm-line-height-base: 1.65;
+	// --ifm-font-family-base: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif,
+	// 	BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+	// 	"Segoe UI Symbol";
+	--ifm-font-family-monospace: "Liberation Mono", "Courier New", monospace;
+	--ifm-navbar-link-color: black;
+	--ifm-code-border-radius: 3px;
+	--ifm-code-background: rgba(175, 184, 193, 0.2);
+	--ifm-navbar-link-hover-color: #bbb;
+	--ifm-navbar-height: 4rem;
+	--ifm-navbar-link-color: #fff;
+	--ifm-color-content-inverse: #fff;
+	--ifm-color-primary: #2e8555;
+	--ifm-color-primary-dark: #29784c;
+	--ifm-color-primary-darker: #277148;
+	--ifm-color-primary-darkest: #205d3b;
+	--ifm-color-primary-light: #33925d;
+	--ifm-color-primary-lighter: #359962;
+	--ifm-color-primary-lightest: #3cad6e;
+	--ifm-code-font-size: 95%;
+	--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+	@media screen and (max-width: 996px) {
+		.navbar-sidebar__brand > .navbar__brand > .navbar__title {
+			color: black;
+		}
+		.main-wrapper > .heroBanner_src-pages-index-module {
+			padding: 0rem;
+		}
+		.heroBanner_qdFl,
+		.main-wrapper > .heroBanner_qdFl {
+			padding: 0rem;
+		}
+	}
+	.theme-doc-markdown > .anchor {
+		padding-bottom: 0.3em;
+		border-bottom: 1px solid #eaecef;
+	}
+
+	.theme-doc-markdown > header > h1 {
+		padding-bottom: 0.3em;
+		border-bottom: 1px solid #eaecef;
+	}
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+	--ifm-code-border-radius: 3px;
+	--ifm-code-background: rgba(175, 184, 193, 0.2);
+	--ifm-navbar-height: 4rem;
+	--ifm-navbar-link-color: #d0d0d0;
+	--ifm-color-content-inverse: #d0d0d0;
+	--ifm-color-primary: #25c2a0;
+	--ifm-color-primary-dark: #21af90;
+	--ifm-color-primary-darker: #1fa588;
+	--ifm-color-primary-darkest: #1a8870;
+	--ifm-color-primary-light: #29d5b0;
+	--ifm-color-primary-lighter: #32d8b4;
+	--ifm-color-primary-lightest: #4fddbf;
+	--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+	@media screen and (max-width: 996px) {
+		.navbar-sidebar__brand > .navbar__brand > .navbar__title {
+			color: white;
+		}
+		.main-wrapper > .heroBanner_src-pages-index-module {
+			padding: 0rem;
+		}
+		.heroBanner_qdFl,
+		.main-wrapper > .heroBanner_qdFl {
+			padding: 0rem;
+		}
+	}
+	.theme-doc-markdown > .anchor {
+		padding-bottom: 0.3em;
+		border-bottom: 1px solid #435266;
+	}
+
+	.theme-doc-markdown > header > h1 {
+		padding-bottom: 0.3em;
+		border-bottom: 1px solid #435266;
+	}
+}
+
+.hero {
+	background: url("https://oss.kinda.info/image/202309051636751.jpg") no-repeat center center;
+	background-attachment: fixed;
+	height: 100vh;
+	background-size: cover;
+	&::after {
+		position: absolute;
+		z-index: 1;
+		content: "";
+		width: 100%;
+		height: 100%;
+		backdrop-filter: blur(5px);
+		background-color: rgba(0, 0, 0, 0.2);
+	}
+	& > .container {
+		z-index: 2;
+		width: 70%;
+		& > .typed-cursor {
+			font-size: 2rem;
+			font-weight: 500;
+			line-height: 1.2;
+		}
+	}
+}
+
+code:not([class]) {
+	border: none;
+	padding: 0.2em 0.4em;
+	margin: 0 0.2em;
+}
+
+.hero__subtitle {
+	font-size: 2rem;
+	font-weight: 500;
+	line-height: 1.2;
+	width: 80%;
+	margin: 1.5rem auto;
+}
+
+.table-of-contents__link--active {
+	font-weight: 500;
+	font-size: 1rem;
+}
+
+.table-of-contents__link {
+	transition: all ease-in-out 0.2s;
+}
+
+.main-wrapper {
+	min-height: 100vh;
+	.container {
+		margin-top: 3.5rem !important;
+	}
+}
+
+.navbar__items--right > div > button > svg {
+	color: #fff;
+}
+
+.navbar__items > button > svg {
+	color: #fff;
+}
+
+body {
+	cursor: url("https://cdn.jsdelivr.net/gh/Tomotoes/images/blog/default.cur"), auto;
+}

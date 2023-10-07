@@ -14,6 +14,9 @@ const config = {
 		// 	defer: true,
 		// },
 		{
+			src: 'https://www.youtube.com/iframe_api'
+		},
+		{
 			src: './js/google.js',
 		},
 		// {
@@ -69,7 +72,7 @@ const config = {
 		],
 	],
 	title: '陌上花开',
-	tagline: 'Kinda的个人网站',
+	tagline: '生活在自由而蔚蓝的天空之下。',
 	url: 'https://huaqinda.com',
 	baseUrl: '/',
 	onBrokenLinks: 'throw',

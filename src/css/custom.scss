@@ -93,17 +93,17 @@
 }
 
 .hero {
-	background: url("https://oss.kinda.info/image/202309051636751.jpg") no-repeat center center;
-	background-attachment: fixed;
+	// background: url("https://oss.kinda.info/image/202309051636751.jpg") no-repeat center center;
+	// background-attachment: fixed;
 	height: 100vh;
-	background-size: cover;
+	// background-size: cover;
 	&::after {
 		position: absolute;
 		z-index: 1;
 		content: "";
 		width: 100%;
 		height: 100%;
-		backdrop-filter: blur(5px);
+		// backdrop-filter: blur(5px);
 		background-color: rgba(0, 0, 0, 0.2);
 	}
 	& > .container {

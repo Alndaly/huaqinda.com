@@ -154,6 +154,11 @@ const config = {
 						position: 'left',
 					},
 					{
+						to: '/docs/interview/',
+						label: '面试',
+						position: 'left',
+					},
+					{
 						to: '/docs/photograph/',
 						label: '摄影',
 						position: 'left',
@@ -191,16 +196,6 @@ const config = {
 					{
 						to: '/docs/others/',
 						label: '杂项',
-						position: 'left',
-					},
-					{
-						to: '/docs/psychology/',
-						label: '心理',
-						position: 'left',
-					},
-					{
-						to: '/docs/travel/',
-						label: '旅游',
 						position: 'left',
 					},
 					{ to: '/blog', label: '博客', position: 'right' },

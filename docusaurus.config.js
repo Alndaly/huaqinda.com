@@ -68,7 +68,7 @@ const config = {
 			},
 		],
 	],
-	title: '陌上见花开',
+	title: '陌上花开',
 	tagline: 'Kinda的个人网站',
 	url: 'https://huaqinda.com',
 	baseUrl: '/',
@@ -149,32 +149,32 @@ const config = {
 				// },
 				items: [
 					{
-						to: '/docs/frontend/',
+						to: '/docs/frontend/React/hooks',
 						label: '前端',
 						position: 'left',
 					},
 					{
-						to: '/docs/interview/',
+						to: '/docs/interview/JavaScript/== _===',
 						label: '面试',
 						position: 'left',
 					},
 					{
-						to: '/docs/photograph/',
+						to: '/docs/photograph/A6400说明',
 						label: '摄影',
 						position: 'left',
 					},
 					{
-						to: '/docs/health/',
+						to: '/docs/health/绪论',
 						label: '健康',
 						position: 'left',
 					},
 					{
-						to: '/docs/finance/',
+						to: '/docs/finance/real-estate',
 						label: '金融',
 						position: 'left',
 					},
 					{
-						to: '/docs/backend/',
+						to: '/docs/backend/Django/base',
 						label: '服务端',
 						position: 'left',
 					},
@@ -184,18 +184,13 @@ const config = {
 						position: 'left',
 					},
 					{
-						to: '/docs/color-modulation/',
-						label: '色彩',
-						position: 'left',
-					},
-					{
-						to: '/docs/tools/',
-						label: '工具',
-						position: 'left',
-					},
-					{
-						to: '/docs/others/',
+						to: '/docs/others/Anaconda/basic-utils',
 						label: '杂项',
+						position: 'left',
+					},
+					{
+						to: '/docs/travel/HangZhou/Fuyang',
+						label: '旅游',
 						position: 'left',
 					},
 					{ to: '/blog', label: '博客', position: 'right' },

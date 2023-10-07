@@ -6,7 +6,6 @@ import Link from '@docusaurus/Link'
 type FeatureItem = {
   title: string;
   path: string;
-  image: string;
   description: JSX.Element;
 };
 
@@ -14,7 +13,6 @@ const FeatureList: FeatureItem[] = [
   {
     title: '微校WeSmile小程序',
     path: 'https://docs.zuowu.cc',
-    image: 'https://oss.kinda.info/image/202305191323045.jpg',
     description: (
       <>
         <div>
@@ -29,7 +27,6 @@ const FeatureList: FeatureItem[] = [
   {
     title: '微校WeSmile管理台',
     path: 'https://manage.weixiao.zuowu.cc',
-    image: 'https://oss.kinda.info/image/202309051652630.png',
     description: (
       <>
         <div>
@@ -44,7 +41,6 @@ const FeatureList: FeatureItem[] = [
   {
     title: 'UniAPI',
     path: 'https://uniapi.top',
-    image: 'https://oss.kinda.info/image/202309051655298.png',
     description: (
       <>
         <div>
@@ -58,12 +54,9 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function Feature({ title, path, image, description }: FeatureItem) {
+function Feature({ title, path, description }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
-      <div className={styles.featureImageBox}>
-        <img className={styles.featureImage} src={image}></img>
-      </div>
       <div className="text--center padding-horiz--md">
         <Link to={path}>{title}</Link>
         <p>{description}</p>

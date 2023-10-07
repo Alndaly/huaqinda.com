@@ -11,7 +11,7 @@ export default function BlogLayout(props) {
         <div className="row">
           <BlogSidebar sidebar={sidebar} />
           <main
-            className={clsx('col', {
+            className={clsx('col', 'margin-vert--lg', {
               'col--7': hasSidebar,
               'col--9 col--offset-1': !hasSidebar,
             })}

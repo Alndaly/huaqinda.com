@@ -28,7 +28,7 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className={styles.bg}>
         {/* <video autoPlay loop muted> */}
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VNu15Qqomt8?autoplay=1&autohide=1&border=0&wmode=opaque&enablejsapi=1" title="FOREST 4K 🌲 American Nature Relaxation Film - Peaceful Relaxing Music - 4k Video UltraHD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VNu15Qqomt8?autoplay=1&autohide=1&border=0&wmode=opaque&enablejsapi=1&controls=0&modestbranding=1&iv_load_policy=1&start=5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         {/* <source src="https://vodpub6.v.news.cn/yhfb-original/20230427/126aae6e-2065-4b1a-bc26-8549dac382ff.mp4" type="video/mp4" /> */}
         {/* </video> */}
       </div>

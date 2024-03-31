@@ -1,8 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const math = require('remark-math');
 const katex = require('rehype-katex');
 
@@ -157,33 +155,8 @@ const config = {
 						position: 'left',
 					},
 					{
-						to: '/docs/interview/JavaScript/== _===',
-						label: '面试',
-						position: 'left',
-					},
-					{
-						to: '/docs/photograph/A6400说明',
-						label: '摄影',
-						position: 'left',
-					},
-					{
-						to: '/docs/health/绪论',
-						label: '健康',
-						position: 'left',
-					},
-					{
-						to: '/docs/finance/real-estate',
-						label: '金融',
-						position: 'left',
-					},
-					{
-						to: '/docs/backend/Django/base',
+						to: '/docs/backend/Ubuntu',
 						label: '服务端',
-						position: 'left',
-					},
-					{
-						to: '/docs/artificial-intelligence/',
-						label: '人工智能',
 						position: 'left',
 					},
 					{
@@ -191,20 +164,15 @@ const config = {
 						label: '杂项',
 						position: 'left',
 					},
-					{
-						to: '/docs/travel/HangZhou/Fuyang',
-						label: '旅游',
-						position: 'left',
-					},
-					{ to: '/blog', label: '博客', position: 'right' },
+					{ href: 'https://kinda.info', label: '博客', position: 'right' },
 					{
 						href: 'https://uniapi.top',
 						label: 'UniAPI',
 						position: 'right',
 					},
 					{
-						href: 'https://docs.zuowu.cc',
-						label: '微校WeSmile',
+						href: 'https://docs.unit-one.top',
+						label: 'UnitOne私域社区',
 						position: 'right',
 					},
 					{
@@ -238,12 +206,8 @@ const config = {
 								href: 'https://uniapi.top',
 							},
 							{
-								label: '微校WeSmile高校社区',
-								href: 'https://docs.zuowu.cc',
-							},
-							{
-								label: '微校WeSmile高校社区管理台',
-								href: 'https://manage.weixiao.zuowu.cc',
+								label: 'UnitOne私域社区',
+								href: 'https://doc.unit-one.top',
 							},
 						],
 					},
@@ -251,9 +215,7 @@ const config = {
 				copyright: `Copyright © ${new Date().getFullYear()} Kinda.`,
 			},
 			prism: {
-				additionalLanguages: ['powershell', 'swift', 'bash', 'java', 'groovy'],
-				theme: lightCodeTheme,
-				darkTheme: darkCodeTheme,
+				additionalLanguages: ['powershell', 'swift', 'bash', 'java', 'groovy']
 			},
 		}),
 	plugins: ['@docusaurus/theme-live-codeblock', 'docusaurus-plugin-sass'],

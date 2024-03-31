@@ -122,39 +122,3 @@ code:not([class]) {
 	padding: 0.2em 0.4em;
 	margin: 0 0.2em;
 }
-
-.hero__subtitle {
-	font-size: 2rem;
-	font-weight: 500;
-	line-height: 1.2;
-	width: 80%;
-	margin: 1.5rem auto;
-}
-
-.table-of-contents__link--active {
-	font-weight: 500;
-	font-size: 1rem;
-}
-
-.table-of-contents__link {
-	transition: all ease-in-out 0.2s;
-}
-
-.main-wrapper {
-	min-height: 100vh;
-	.container {
-		margin-top: 3.5rem !important;
-	}
-}
-
-.navbar__items--right > div > button > svg {
-	color: #fff;
-}
-
-.navbar__items > button > svg {
-	color: #fff;
-}
-
-body {
-	cursor: url("https://cdn.jsdelivr.net/gh/Tomotoes/images/blog/default.cur"), auto;
-}

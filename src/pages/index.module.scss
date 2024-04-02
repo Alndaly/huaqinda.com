@@ -1,0 +1,25 @@
+.bg {
+    background-image: url('https://oss.kinda.info/image/202402112217353.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .text {
+        // backdrop-filter: blur(10px);
+        width: 100%;
+        padding: 10px;
+        position: relative;
+        h1 {
+            font-size: 3em;
+        }
+        p {
+            font-size: 1.2em;
+            font-style: italic;
+        }
+    }
+}

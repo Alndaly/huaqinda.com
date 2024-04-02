@@ -69,8 +69,8 @@ const config = {
 			},
 		],
 	],
-	title: '陌上花开',
-	tagline: '生活在自由而蔚蓝的天空之下。',
+	title: '阡陌',
+	tagline: '天空生而蔚蓝，我们生而自由。',
 	url: 'https://huaqinda.com',
 	baseUrl: '/',
 	onBrokenLinks: 'throw',
@@ -190,7 +190,7 @@ const config = {
 						items: [
 							{
 								label: 'Blog',
-								to: '/blog',
+								href: 'https://kinda.info'
 							},
 							{
 								label: 'GitHub',

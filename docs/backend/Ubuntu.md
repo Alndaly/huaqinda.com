@@ -115,4 +115,3 @@ At 15:43 on 18/01/21, file /app/chat/chat-0.0.1-SNAPSHOT.jar was changed.
 ```
 
 每次监测到新建或者移动事件后，都会将文件名称传入while循环中的FILENAME，接着执行do中的操作。
-```

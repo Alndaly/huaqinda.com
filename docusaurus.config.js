@@ -155,7 +155,7 @@ const config = {
 						position: 'left',
 					},
 					{
-						to: '/docs/backend/Ubuntu',
+						to: '/docs/backend/Nginx/Nginx技巧和一些问题',
 						label: '服务端',
 						position: 'left',
 					},
@@ -164,7 +164,8 @@ const config = {
 						label: '杂项',
 						position: 'left',
 					},
-					{ href: 'https://kinda.info', label: '博客', position: 'right' },
+					// { href: 'https://kinda.info', label: '博客', position: 'right' },
+					{ to: '/blog', label: '博客', position: 'right' },
 					{
 						href: 'https://uniapi.top',
 						label: 'UniAPI',

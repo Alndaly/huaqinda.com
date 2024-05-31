@@ -1,6 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+import {themes as prismThemes} from 'prism-react-renderer';
 const math = require('remark-math');
 const katex = require('rehype-katex');
 
@@ -216,6 +217,7 @@ const config = {
 				copyright: `Copyright © ${new Date().getFullYear()} Kinda.`,
 			},
 			prism: {
+				theme: prismThemes.dracula,
 				additionalLanguages: ['powershell', 'swift', 'bash', 'java', 'groovy']
 			},
 		}),

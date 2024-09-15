@@ -34,18 +34,20 @@ export default function SideRight(props) {
 
   return (
     <div id='sideRight' className='hidden xl:block w-72 space-y-4 h-full'>
-      <InfoCard {...props} className='w-72' />
+      <InfoCard {...props} className='w-72 wow fadeInUp' />
 
       <div className='sticky top-20 space-y-4'>
         {/* 文章页显示目录 */}
         {post && post.toc && post.toc.length > 0 && (
-          <Card className='bg-white dark:bg-[#1e1e1e]'>
+          <Card className='bg-white dark:bg-[#1e1e1e] wow fadeInUp'>
             <Catalog toc={post.toc} />
           </Card>
         )}
 
         {/* 联系交流群 */}
-        <TouchMeCard />
+        <div className='wow fadeInUp'>
+          <TouchMeCard />
+        </div>
 
         {/* 最新文章列表 */}
         <div

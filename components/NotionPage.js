@@ -173,7 +173,7 @@ const mapPageUrl = id => {
  * 缩放
  * @returns
  */
-function getMediumZoomMargin() {
+function getMediumZoomMargin () {
   const width = window.innerWidth
 
   if (width < 500) {

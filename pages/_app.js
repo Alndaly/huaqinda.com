@@ -19,6 +19,7 @@ import { getQueryParam } from '../lib/utils'
 import BLOG from '@/blog.config'
 import ExternalPlugins from '@/components/ExternalPlugins'
 import GlobalHead from '@/components/GlobalHead'
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 /**
  * App挂载DOM 入口文件
@@ -56,6 +57,7 @@ const MyApp = ({ Component, pageProps }) => {
       </GLayout>
       <ExternalPlugins {...pageProps} />
       <Analytics />
+      <GoogleAnalytics gaId='G-V10LZ1480X' />
     </GlobalContextProvider>
   )
 }

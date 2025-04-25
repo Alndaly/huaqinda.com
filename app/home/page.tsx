@@ -14,7 +14,7 @@ export default function Home() {
 					alt='my avatar'
 				/>
 				<div className='font-bold text-lg mt-4 font-serif'>
-					Hello, I'm Kinda
+					你好，这里是七月。
 				</div>
 				<div className='font-bold text-lg mt-4 font-serif'>
 					「只要你呼唤我的名字，我们的羁绊就永远不会消失」

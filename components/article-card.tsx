@@ -5,10 +5,11 @@ import { zhCN } from 'date-fns/locale/zh-CN';
 
 const ArticleCard = (props: any) => {
 	const { article } = props;
+	if (article.object !== 'page') return null;
 	return (
 		<div className='flex flex-col gap-2 rounded transition-all duration-300 bg-muted p-5'>
 			<Link href={'/post/' + article.id}>
-				{article.properties.Name.title.map((title: any, index: number) => {
+				{article.properties.title.title.map((title: any, index: number) => {
 					return (
 						<div key={index} className='font-bold text-xl line-clamp-2'>
 							{title.plain_text}
@@ -16,9 +17,9 @@ const ArticleCard = (props: any) => {
 					);
 				})}
 			</Link>
-			{article.properties.Summary?.rich_text && (
+			{article.properties.summary?.rich_text && (
 				<div className='flex-1'>
-					{article.properties.Summary.rich_text.map(
+					{article.properties.summary.rich_text.map(
 						(summary: any, index: number) => {
 							return (
 								<div key={index} className='line-clamp-3'>
@@ -43,9 +44,9 @@ const ArticleCard = (props: any) => {
 						)}
 					</span>
 				</div>
-				{article.properties.Tags.multi_select.length > 0 && (
+				{article.properties.tags.multi_select.length > 0 && (
 					<div className='flex flex-row gap-2'>
-						{article.properties.Tags.multi_select.map((tag: any) => {
+						{article.properties.tags.multi_select.map((tag: any) => {
 							return (
 								<Link
 									key={tag.id}

@@ -21,13 +21,13 @@ export const getDatabaseData = cache(async (databaseID?: string, tag?: string): 
         filter: {
             and: [
                 {
-                    property: 'Published',
-                    checkbox: {
-                        equals: true,
-                    },
+                    property: 'status',
+                    select: {
+                        equals: 'Published'
+                    }
                 },
                 {
-                    property: 'Tags',
+                    property: 'tags',
                     multi_select: {
                         contains: tag ? tag : '',
                     }

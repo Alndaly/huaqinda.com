@@ -11,6 +11,7 @@ import {
 import { redirect } from 'next/navigation';
 import { getTableOfContents } from '@/utils/md';
 import TableOfContents from '@/components/toc';
+import { console } from 'inspector';
 
 export const revalidate = 3600;
 
@@ -81,17 +82,12 @@ const PostPage = async ({ params }: PostProps) => {
 	const blocks = (await getBlocks(slug)).results;
 	const headers = getTableOfContents(blocks);
 	const article: GetPageResponse = await getPageData(slug);
-	// @ts-ignore
-	if (!article.properties.Published.checkbox) {
-		// 如果文章是未发布的，则重定向到404页面
-		redirect('/not-found');
-	}
 
 	return (
 		<div>
 			<article className='prose dark:prose-invert mx-auto p-5 sm:p-10'>
 				{/* @ts-ignore */}
-				{article.properties.Name.title.map((title: any, index: number) => {
+				{article.properties.title.title.map((title: any, index: number) => {
 					return <h1 key={index}>{title.plain_text}</h1>;
 				})}
 				<p className='text-sm text-zinc-500 dark:text-zinc-400'>
@@ -105,15 +101,15 @@ const PostPage = async ({ params }: PostProps) => {
 						.format('LLLL')}
 				</p>
 				{/* @ts-ignore */}
-				{article.properties.Summary?.rich_text &&
+				{article.properties.summary?.rich_text &&
 					// @ts-ignore
-					article.properties.Summary?.rich_text.length > 0 && (
+					article.properties.summary?.rich_text.length > 0 && (
 						<div className='rounded ring-1 ring-inset dark:ring-white/10 ring-black/10 bg-black/5 dark:bg-white/5 p-5'>
 							<p className='my-0 font-bold text-lg pb-2 font-mono flex flex-row items-center gap-2 italic dark:text-yellow-200 text-yellow-500'>
 								AI Summary
 							</p>
 							{/* @ts-ignore */}
-							{article.properties.Summary.rich_text.map(
+							{article.properties.summary.rich_text.map(
 								(summary: any, index: number) => {
 									return <span key={index}>{summary.plain_text}</span>;
 								}
@@ -127,10 +123,10 @@ const PostPage = async ({ params }: PostProps) => {
 					);
 				})}
 				{/* @ts-ignore */}
-				{article.properties.Tags.multi_select.length > 0 && (
+				{article.properties.tags.multi_select.length > 0 && (
 					<div className='flex flex-row gap-2 py-2'>
 						{/* @ts-ignore */}
-						{article.properties.Tags.multi_select.map((tag: any) => {
+						{article.properties.tags.multi_select.map((tag: any) => {
 							return (
 								<Link
 									href={`/tag/${tag.name}`}

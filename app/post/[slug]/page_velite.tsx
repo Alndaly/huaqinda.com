@@ -7,7 +7,6 @@ type Params = Promise<{ slug: string }>;
 const PostPage = async ({ params }: { params: Params }) => {
 	const slug = (await params).slug;
 	const post = posts.find((i) => {
-		console.log(i.slug);
 		return i.slug === `post/${slug}`;
 	});
 	if (!post) notFound();

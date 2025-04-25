@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+.yarn/install-state.gz
 
 # testing
 /coverage
@@ -25,28 +26,13 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-# .env.local # 版本号放在此环境变量中
-.env.development.local
-.env.test.local
-.env.production.local
-.env
+.env*.local
 
 # vercel
 .vercel
 
-# dev
-/data.json
-/pnpm-lock.yaml
-.idea
-.vscode
+# typescript
+*.tsbuildinfo
+next-env.d.ts
 
-
-# sitemap
-/public/robots.txt
-/public/sitemap.xml
-/public/rss/*
-/sitemap.xml
-
-# yarn
-package-lock.json
-# yarn.lock
+.contentlayer

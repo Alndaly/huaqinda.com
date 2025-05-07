@@ -1,0 +1,47 @@
+import { BiliBiliIcon } from '@/components/icon/bilibili-icon';
+import { GithubIcon } from '@/components/icon/github-icon';
+import { YoutubeIcon } from '@/components/icon/youtube-icon';
+
+export default function Home() {
+	return (
+		<>
+			<div className='absolute top-0 left-0 h-full w-full dark:bg-black/50 justify-center items-center flex flex-col'>
+				<img
+					className='rounded-full w-32 h-32 object-center'
+					src='https://oss.kinda.info/image/202407162310900.jpg'
+					alt='my avatar'
+				/>
+				<div className='font-bold text-lg mt-4 font-serif'>
+					你好，这里是七月。
+				</div>
+				<div className='font-bold text-lg mt-4 font-serif'>
+					「只要你呼唤我的名字，我们的羁绊就永远不会消失」
+				</div>
+				<div className='mt-5 flex flex-row gap-4 rounded-full backdrop-blur-sm bg-black/20 dark:bg-black/20 p-2'>
+					<div>
+						<BiliBiliIcon />
+					</div>
+					<div>
+						<GithubIcon />
+					</div>
+					<div>
+						<YoutubeIcon />
+					</div>
+				</div>
+			</div>
+			{/* <div className='absolute left-5'>
+				<div className='hidden sm:flex flex-col gap-4 rounded-full backdrop-blur-sm bg-black/20 dark:bg-black/20 p-2'>
+					<div>
+						<BiliBiliIcon />
+					</div>
+					<div>
+						<GithubIcon />
+					</div>
+					<div>
+						<YoutubeIcon />
+					</div>
+				</div>
+			</div> */}
+		</>
+	);
+}

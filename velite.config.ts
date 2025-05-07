@@ -23,11 +23,13 @@ export default defineConfig({
   collections: {
     posts: {
       name: 'Post', // collection type name
-      pattern: 'post/**/*.mdx', // content files glob pattern
+      pattern: 'posts/**/*.mdx', // content files glob pattern
       schema: s
         .object({
+          title: s.string(), // extract title from frontmatter
           slug: s.path(), // auto generate slug from file path
           lastModified: timestamp(),
+          tags: s.array(s.string()).optional(), // extract tags from frontmatter
           metadata: s.metadata(), // extract markdown reading-time, word-count, etc.
           excerpt: s.excerpt(), // excerpt of markdown content
           content: s.markdown(), // transform markdown to html

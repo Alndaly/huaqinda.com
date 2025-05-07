@@ -26,7 +26,7 @@ const postCard = (props: Props) => {
 						})}
 					</span>
 				</div>
-				{post.tags.length > 0 && (
+				{post.tags && post.tags.length > 0 && (
 					<div className='flex flex-row gap-2'>
 						{post.tags.map((tag: string, index: number) => {
 							return (

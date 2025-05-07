@@ -1,4 +1,4 @@
-import { getBlocks } from '@/src/service/articles';
+import { getBlocks } from '@/service/articles';
 import {
 	BlockObjectResponse,
 	ColumnListBlockObjectResponse,

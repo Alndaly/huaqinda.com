@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import { ModeToggle } from './mode-toggle';
-import { useAppStore } from '@/src/store/app';
+import { useAppStore } from '@/store/app';
 import { usePathname } from 'next/navigation';
 
 const Nav = () => {

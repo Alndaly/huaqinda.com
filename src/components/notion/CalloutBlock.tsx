@@ -1,11 +1,11 @@
-import { getBlocks } from '@/src/service/articles';
+import { getBlocks } from '@/service/articles';
 import {
 	BlockObjectResponse,
 	CalloutBlockObjectResponse,
 	ListBlockChildrenResponse,
 } from '@notionhq/client/build/src/api-endpoints';
 import NotionBlock from '.';
-import { cn } from '@/src/lib/utils';
+import { cn } from '@/lib/utils';
 
 const CalloutBlock = async ({
 	block,

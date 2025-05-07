@@ -1,12 +1,16 @@
 import * as runtime from 'react/jsx-runtime';
 import CustomImageBlock from './custom-image-block';
 import CustomCodeBlock from './custom-code-block';
+import React from 'react';
 
 const sharedComponents = {
 	// Add your global components here
 	img: CustomImageBlock,
 	code: CustomCodeBlock,
-	pre: ({ children }: { children: React.ReactNode }) => <>{children}</>, // remove the pre tag
+	pre: ({ children }: { children: React.ReactElement }) => {
+		// fallback
+		return <>{React.cloneElement(children, { isBlock: true })}</>;
+	},
 };
 
 // parse the Velite generated MDX code into a React component function

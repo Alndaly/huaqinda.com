@@ -12,6 +12,7 @@ const PostPage = async ({ params }: { params: Params }) => {
 	if (!post) notFound();
 	return (
 		<article className='prose dark:prose-invert mx-auto p-5 sm:py-10'>
+			<h1>{post.title}</h1>
 			<MDXContent code={post.code} />
 		</article>
 	);

@@ -41,8 +41,6 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='zh' suppressHydrationWarning>
-			{/* 由于一些tailwindcss的样式是拼接的，编译时无法识别导致编译结果中没有对应的样式，故而此处引入cdn来补充tailwindcss样式表 */}
-			<Script src='https://unpkg.com/@tailwindcss/browser@4' />
 			<body className='dark:bg-[#1E1E1E]'>
 				<GoogleAnalytics gaId='G-JT60THL1FF' />
 				<ThemeProvider attribute='class' defaultTheme='system' enableSystem>

@@ -12,14 +12,14 @@ const postCard = (props: Props) => {
 	const { post } = props;
 	return (
 		<div className='flex flex-col gap-2 rounded transition-all duration-300 bg-muted p-5'>
-			<Link href={`/${post.slug}`}>
+			<Link href={`/${post.slug}`} className='no-underline'>
 				<div className='font-bold text-xl line-clamp-2'>{post.title}</div>
 			</Link>
 			<div className='line-clamp-3 text-sm'>{post.excerpt}</div>
 			<div className='flex flex-row justify-between'>
 				<div className='text-muted-foreground text-xs'>
+					<span className='mr-1'>上次更新</span>
 					<span>
-						上次更新
 						{formatDistance(new Date(post.lastModified), new Date(), {
 							addSuffix: true,
 							locale: zhCN,

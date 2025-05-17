@@ -2,29 +2,29 @@
 title: ComfyUI 小技巧
 ---
 
-## InstantID使用
+## InstantID 使用
 
-如果使用instantID的话，关于人脸的位置，需要传入一张照片给 `Apply InstantID Advanced` 的 `image_pks` 输入参数作为位置参考。
+如果使用 instantID 的话，关于人脸的位置，需要传入一张照片给 `Apply InstantID Advanced` 的 `image_pks` 输入参数作为位置参考。
 
-<aside>
-⚠️ **尤其注意人脸位置参考图片的尺寸需要尽量和你的浅空间大小一致，不然会出现位置和参考图不符的现象**。
-</aside>
+<Callout>
+尤其注意人脸位置参考图片的尺寸需要尽量和你的浅空间大小一致，不然会出现位置和参考图不符的现象。
+</Callout>
 
-<aside>
-⛔ 截止2024/7/7，instantID仍不支持sd1.5。如果你使用1.5的模型，会报错如下
+<Callout>
+截止2024/7/7，instantID仍不支持sd1.5。如果你使用1.5的模型，会报错如下
 
 ```python
 'NoneType' object has no attribute 'shape'
 ```
-</aside>
+</Callout>
 
 ## Layer Diffuse
 
-在ComfyUI中的，对应的这个实现有部分代码是有问题的，需要做修改。
+在 ComfyUI 中的，对应的这个实现有部分代码是有问题的，需要做修改。
 
 具体实现仓库：https://github.com/huchenlei/ComfyUI-layerdiffuse
 
-找到这个仓库目录下的文件 `lib_layerdiffusion/models.py`
+找到这个仓库目录下的文件  `lib_layerdiffusion/models.py`
 
 针对其中的：
 
@@ -47,9 +47,9 @@ else:
     median = torch.median(result, dim=0).values
 ```
 
-保存，然后重启ComfyUI
+保存，然后重启 ComfyUI
 
-本质原因是apple芯片的gpu在 `torch.median` 操作大于4个维度的向量的时候，会报错。
+本质原因是 apple 芯片的 gpu 在 `torch.median` 操作大于 4 个维度的向量的时候，会报错。
 
 错误简单复现：
 
@@ -61,9 +61,9 @@ b = a.to(mps_device)
 tt = torch.median(b, dim=0) # crash here
 ```
 
-## MacOS14.4中 `torchvision` 的适配问题
+## MacOS14.4 中 `torchvision` 的适配问题
 
-macos14.4以及更新的版本中，ComfyUI绘画会出现出图灰黑/蓝黑/模糊的情况，是pytorch的适配问题，详见https://github.com/comfyanonymous/ComfyUI/issues/2992。当前解决方法如下：
+macos14.4 以及更新的版本中，ComfyUI 绘画会出现出图灰黑/蓝黑/模糊的情况，是 pytorch 的适配问题，详见https://github.com/comfyanonymous/ComfyUI/issues/2992。当前解决方法如下：
 
 ```bash
 pip install torch==2.1.2 torchvision==0.16.2
@@ -78,30 +78,30 @@ pip install torch torchvision # same as above
 pip install --pre torch torchvision --index-url https://download.pytorch.org/whl/nightly/cpu # development version
 ```
 
-## Inpainting Model技巧
+## Inpainting Model 技巧
 
-#### 1. 如果你没有某个model对应的inpainting model，你可以通过如下方式解决
+#### 1. 如果你没有某个 model 对应的 inpainting model，你可以通过如下方式解决
 
-分别加载有inpainting model的base model和其inpainting model，然后通过modelmerge substract节点获取inpainting部分，然后加载你没有inpainting model的那个model，再把modelmerge substract节点的导出和这个model通过modelmerge add的节点合并，这样就生成了你这个model对应的inpainting model。
+分别加载有 inpainting model 的 base model 和其 inpainting model，然后通过 modelmerge substract 节点获取 inpainting 部分，然后加载你没有 inpainting model 的那个 model，再把 modelmerge substract 节点的导出和这个 model 通过 modelmerge add 的节点合并，这样就生成了你这个 model 对应的 inpainting model。
 
 ![](https://qingyon-revornix-public.oss-cn-beijing.aliyuncs.com/images/202505152318494.png)
 
-#### 2. 如果你inpainting的部分的边缘过于尖锐锋利，你可以使用differential model节点转接model。然后把inpainting部分的mask通过GrowMask节点外扩一些。
+#### 2. 如果你 inpainting 的部分的边缘过于尖锐锋利，你可以使用 differential model 节点转接 model。然后把 inpainting 部分的 mask 通过 GrowMask 节点外扩一些。
 
 ![](https://qingyon-revornix-public.oss-cn-beijing.aliyuncs.com/images/202505152318077.png)
 
-## Ipadapter应用
+## Ipadapter 应用
 
-#### mad scientist节点
+#### mad scientist 节点
 
-劫持了unet的部分cross_attention层，共计12层，其中第4层表示结构，第7层表示风格。可以通过layer_weights参数修改对应层数权重。
+劫持了 unet 的部分 cross_attention 层，共计 12 层，其中第 4 层表示结构，第 7 层表示风格。可以通过 layer_weights 参数修改对应层数权重。
 
 ![](https://qingyon-revornix-public.oss-cn-beijing.aliyuncs.com/images/202505152319809.png)
 
-如果所有层权重都是1且weight_type是linear，那么就等于一个普通的ipadapter应用，即生成的图片完全参考ipadapter。
+如果所有层权重都是 1 且 weight_type 是 linear，那么就等于一个普通的 ipadapter 应用，即生成的图片完全参考 ipadapter。
 
-如果只有index6设置为1，其他保持0，那么就等于ipadapter的weight_type取值style_transfer，即按照你的promt生成图片，但是获取参考图的风格，此时如果修改其他index的权重到>0，可以获取到一定的参考图的元素加入到生成的图片中。
+如果只有 index6 设置为 1，其他保持 0，那么就等于 ipadapter 的 weight_type 取值 style_transfer，即按照你的 promt 生成图片，但是获取参考图的风格，此时如果修改其他 index 的权重到>0，可以获取到一定的参考图的元素加入到生成的图片中。
 
-在实际操作中，如果把图片同时传递到image和image_negative，同时weight_type选取style transfer precise，mad scientist会把negative部分的结构特征乘以你设置的index3的权重（注意是negative，所以是负值，也就是最终会进一步去除参考图中的结构特征），把image部分的风格特征乘以你设置的index6的权重，也就是最终会放大参考图中的风格特征。即最终结果：按比例保留风格，按比例去除结构特征。
+在实际操作中，如果把图片同时传递到 image 和 image_negative，同时 weight_type 选取 style transfer precise，mad scientist 会把 negative 部分的结构特征乘以你设置的 index3 的权重（注意是 negative，所以是负值，也就是最终会进一步去除参考图中的结构特征），把 image 部分的风格特征乘以你设置的 index6 的权重，也就是最终会放大参考图中的风格特征。即最终结果：按比例保留风格，按比例去除结构特征。
 
 ![](https://qingyon-revornix-public.oss-cn-beijing.aliyuncs.com/images/202505152319526.png)

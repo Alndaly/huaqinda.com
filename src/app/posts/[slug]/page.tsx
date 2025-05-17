@@ -3,6 +3,7 @@ import Comments from '@/components/comments';
 import { MDXContent } from '@/components/mdx-content';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { Callout } from '@/components/callout';
 
 type Params = Promise<{ slug: string }>;
 
@@ -15,7 +16,7 @@ const PostPage = async ({ params }: { params: Params }) => {
 	return (
 		<article className='prose dark:prose-invert mx-auto p-5 sm:py-10'>
 			<h1>{post.title}</h1>
-			<MDXContent code={post.code} />
+			<MDXContent code={post.code} components={{ Callout }} />
 			<Link
 				className='no-underline'
 				href='https://creativecommons.org/licenses/by-nc-sa/4.0/'

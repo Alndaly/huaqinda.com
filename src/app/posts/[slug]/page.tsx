@@ -4,10 +4,43 @@ import { MDXContent } from '@/components/mdx-content';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Callout } from '@/components/callout';
+import type { Metadata, ResolvingMetadata } from 'next';
+import { siteConfig } from 'siteconfig';
 
-type Params = Promise<{ slug: string }>;
+type Props = {
+	params: Promise<{ slug: string }>;
+	searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
 
-const PostPage = async ({ params }: { params: Params }) => {
+export async function generateMetadata(
+	{ params, searchParams }: Props,
+	parent: ResolvingMetadata
+): Promise<Metadata> {
+	// read route params
+	const { slug } = await params;
+	const post = posts.find((i) => {
+		return i.slug === `posts/${slug}`;
+	});
+	if (!post) {
+		return {
+			title: '404',
+		};
+	}
+	const previousImages = (await parent).openGraph?.images || [];
+	return {
+		title: post.title,
+		description: post.excerpt,
+		authors: [{ name: siteConfig.author }],
+		openGraph: {
+			title: post.title,
+			siteName: siteConfig.title,
+			description: post.excerpt,
+			images: [...previousImages],
+		},
+	};
+}
+
+const PostPage = async ({ params }: Props) => {
 	const slug = (await params).slug;
 	const post = posts.find((i) => {
 		return i.slug === `posts/${slug}`;

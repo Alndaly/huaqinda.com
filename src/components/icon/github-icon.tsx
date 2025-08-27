@@ -5,7 +5,7 @@ import Link from 'next/link';
 export function GithubIcon() {
 
 	return (
-		<Link href={'https://github.com/Alndaly'} target='_black'>
+		<Link href={'https://github.com/Alndaly'} target='_blank'>
 			<button className='border rounded-full w-8 h-8 flex items-center justify-center border-black dark:border-white'>
 				<svg
 					className='w-4 h-4 text-black dark:text-white'

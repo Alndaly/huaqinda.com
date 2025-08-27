@@ -8,7 +8,7 @@ export function XiaoHongShuIcon() {
 			href={
 				'https://www.xiaohongshu.com/search_result?keyword=304433374&source=web_explore_feed'
 			}
-			target='_black'>
+			target='_blank'>
 			<button className='border rounded-full w-8 h-8 flex items-center justify-center border-black dark:border-white'>
 				<svg
 					className='w-4 h-4 text-black dark:text-white'
